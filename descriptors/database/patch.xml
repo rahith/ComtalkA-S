@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+
+<changeSet author="Mahesh Shivarkar" context="base" id="1337623084753-319">
+        <createTable tableName="item_price">
+	    <column name="id" type="java.sql.Types.INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="item_price_pkey"/>
+            </column>            
+	    <column name="item_id" type="java.sql.Types.INTEGER"/>
+	    <column name="currency_id" type="java.sql.Types.INTEGER"/>
+	    <column name="price" type="java.sql.Types.NUMERIC(22,10)">
+                 <constraints nullable="false"/>
+            </column>
+	    <column name="OPTLOCK" type="java.sql.Types.INTEGER">
+                 <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Mahesh Shivarkar" context="FKs" id="1337623084753-320">
+        <addForeignKeyConstraint baseColumnNames="currency_id" baseTableName="item_price" constraintName="item_price_fk_1" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="currency" referencesUniqueColumn="false"/>
+    </changeSet>
+    <changeSet author="Mahesh Shivarkar" context="FKs" id="1337623084753-321">
+        <addForeignKeyConstraint baseColumnNames="item_id" baseTableName="item_price" constraintName="item_price_fk_2" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="item" referencesUniqueColumn="false"/>
+    </changeSet>
+</databaseChangeLog>

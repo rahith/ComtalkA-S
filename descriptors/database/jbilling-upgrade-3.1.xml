@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet context="base" author="Vikas Bodani" id="20120608-#2725-notification-category">
+        <insert tableName="jbilling_seqs">
+            <column name="name" value="notification_category"/>
+            <column name="next_id" valueNumeric="2"/>
+        </insert>
+    </changeSet>
+    <changeSet context="base" author="Mahesh Shivarkar" id="20130321-#4727-item_type">
+        <dropColumn tableName="item_type" columnName="internal"/>
+    </changeSet>
+    <changeSet context="base" author="Mahesh Shivarkar" id="20130321-#4727-item">
+	    <addColumn tableName="item">
+	            <column name="price_manual" type="java.sql.Types.INTEGER"/>
+	    </addColumn>
+    </changeSet>
+    <changeSet context="base" author="Mahesh Shivarkar" id="20130403-#4727-pluggable_task_type">
+	    <insert tableName="pluggable_task_type">
+	            <column name="id" valueNumeric="96"/>
+	            <column name="category_id" valueNumeric="14"/>
+	            <column name="class_name" value="com.sapienter.jbilling.server.item.tasks.DiscountPricingTask"/>
+	            <column name="min_parameters" valueNumeric="0"/>
+	    </insert>
+	    <insert tableName="pluggable_task_type">
+	            <column name="id" valueNumeric="97"/>
+	            <column name="category_id" valueNumeric="13"/>
+	            <column name="class_name" value="com.sapienter.jbilling.server.item.tasks.SimpleRulesItemManager"/>
+	            <column name="min_parameters" valueNumeric="0"/>
+	    </insert>
+    </changeSet>
+        
+</databaseChangeLog>

@@ -1,0 +1,80 @@
+2013-09-14 15:53:39,069 DEBUG [com.sapienter.jbilling.common.SystemProperties] System properties loaded from: D:\Docmatrix\JB_HOME\jbilling.properties
+2013-09-14 15:53:39,069 DEBUG [com.sapienter.jbilling.common.SystemProperties] Resolved jbilling resources directory to: D:\Docmatrix\JB_HOME\resources\
+2013-09-14 15:54:10,516 DEBUG [com.sapienter.jbilling.server.util.db.JbillingTableDAS] Looking for table + pluggable_task_type_category
+2013-09-14 15:54:10,548 DEBUG [com.sapienter.jbilling.server.pluggableTask.admin.PluggableTaskManager] total classes = 3
+2013-09-14 15:54:10,548 DEBUG [com.sapienter.jbilling.server.util.Bootstrap] Processing 3 scheduled tasks for entity 10
+2013-09-14 15:54:10,548 DEBUG [com.sapienter.jbilling.server.pluggableTask.admin.PluggableTaskManager] Applying task com.sapienter.jbilling.server.billing.task.BillingProcessTask
+2013-09-14 15:54:10,569 DEBUG [com.sapienter.jbilling.server.pluggableTask.admin.PluggableTaskManager] Creating a new instance of com.sapienter.jbilling.server.billing.task.BillingProcessTask
+2013-09-14 15:54:10,578 DEBUG [com.sapienter.jbilling.server.billing.task.BillingProcessTask] Scheduling billing process from jbilling.properties ...
+2013-09-14 15:54:10,578 DEBUG [com.sapienter.jbilling.server.util.Bootstrap] Scheduled: [billing process: start: , end: null, repeat: infinite, interval: 1 mins]
+2013-09-14 15:54:10,578 DEBUG [com.sapienter.jbilling.server.pluggableTask.admin.PluggableTaskManager] Applying task com.sapienter.jbilling.server.process.task.AgeingProcessTask
+2013-09-14 15:54:10,581 DEBUG [com.sapienter.jbilling.server.pluggableTask.admin.PluggableTaskManager] Creating a new instance of com.sapienter.jbilling.server.process.task.AgeingProcessTask
+2013-09-14 15:54:10,582 DEBUG [com.sapienter.jbilling.server.process.task.AgeingProcessTask] Scheduling ageing process from jbilling.properties ...
+2013-09-14 15:54:10,582 DEBUG [com.sapienter.jbilling.server.util.Bootstrap] Scheduled: [ageing process: entity 10, start: , end: null, repeat: infinite, interval: 1 mins]
+2013-09-14 15:54:10,582 DEBUG [com.sapienter.jbilling.server.pluggableTask.admin.PluggableTaskManager] Applying task com.sapienter.jbilling.server.mediation.task.MediationProcessTask
+2013-09-14 15:54:10,585 DEBUG [com.sapienter.jbilling.server.pluggableTask.admin.PluggableTaskManager] Creating a new instance of com.sapienter.jbilling.server.mediation.task.MediationProcessTask
+2013-09-14 15:54:10,590 DEBUG [com.sapienter.jbilling.server.mediation.task.MediationProcessTask] Scheduling mediation process from jbilling.properties ...
+2013-09-14 15:54:10,590 DEBUG [com.sapienter.jbilling.server.util.Bootstrap] Scheduled: [mediation process: start: , end: null, repeat: infinite, interval: 1 mins]
+2013-09-14 15:54:10,590 DEBUG [com.sapienter.jbilling.server.util.Bootstrap] Starting the job scheduler
+2013-09-14 15:55:00,021 INFO  [com.sapienter.jbilling.server.mediation.task.MediationProcessTask] Starting mediation at Sat Sep 14 15:55:00 IST 2013
+2013-09-14 15:55:00,045 DEBUG [com.sapienter.jbilling.server.mediation.MediationSessionBean] Running mediation trigger for entity 10
+2013-09-14 15:55:00,091 DEBUG [com.sapienter.jbilling.server.mediation.MediationSessionBean] Running mediation trigger for entity 10 and configuration 10
+2013-09-14 15:55:00,213 DEBUG [com.sapienter.jbilling.server.pluggableTask.admin.PluggableTaskManager] total classes = 2
+2013-09-14 15:55:00,213 DEBUG [com.sapienter.jbilling.server.pluggableTask.admin.PluggableTaskManager] Applying task com.sapienter.jbilling.server.mediation.task.ComtalkCDRMediationTask
+2013-09-14 15:55:00,233 DEBUG [com.sapienter.jbilling.server.pluggableTask.admin.PluggableTaskManager] Creating a new instance of com.sapienter.jbilling.server.mediation.task.ComtalkCDRMediationTask
+2013-09-14 15:55:00,631 DEBUG [com.sapienter.jbilling.server.mediation.MediationSessionBean] Mediation process finished running. Duration (ms):584
+2013-09-14 15:55:00,633 INFO  [com.sapienter.jbilling.server.mediation.task.MediationProcessTask] Ended mediation at Sat Sep 14 15:55:00 IST 2013
+2013-09-14 15:55:00,744 DEBUG [com.sapienter.jbilling.server.mediation.task.AbstractReader] Batch size for this reader is 100
+2013-09-14 15:55:00,860 DEBUG [com.sapienter.jbilling.server.mediation.task.AbstractJDBCReader] Table name: 'usage_order'
+2013-09-14 15:55:00,924 DEBUG [com.sapienter.jbilling.server.mediation.task.AbstractJDBCReader] Key column names: [id]
+2013-09-14 15:55:00,935 DEBUG [com.sapienter.jbilling.server.mediation.task.AbstractJDBCReader] Timestamp marker column name: 'null'
+2013-09-14 15:55:00,957 DEBUG [com.sapienter.jbilling.server.mediation.task.AbstractJDBCReader] Using marking method LAST_ID
+2013-09-14 15:55:01,048 DEBUG [com.sapienter.jbilling.server.util.PreferenceBL] Looking for preference 47, for entity 10 and table 'entity'
+2013-09-14 15:55:01,075 DEBUG [com.sapienter.jbilling.server.mediation.task.AbstractJDBCReader] Fetched 'last read ID' preference: 0
+2013-09-14 15:55:01,076 DEBUG [com.sapienter.jbilling.server.mediation.task.JDBCReader] SQL query: 'SELECT * FROM usage_order WHERE id > 0 ORDER BY id'
+2013-09-14 15:55:01,157 DEBUG [com.sapienter.jbilling.server.mediation.task.AbstractJDBCReader] Updating 'last read ID' preference to: 6
+2013-09-14 15:55:01,163 DEBUG [com.sapienter.jbilling.server.mediation.MediationSessionBean] Now processing 6 records.
+2013-09-14 15:55:01,165 DEBUG [com.sapienter.jbilling.server.mediation.MediationSessionBean] Normalizing 6 records ...
+2013-09-14 15:55:01,260 DEBUG [com.sapienter.jbilling.server.mediation.MediationSessionBean] Detected record as a new event: 1
+2013-09-14 15:55:01,336 DEBUG [com.sapienter.jbilling.server.mediation.MediationSessionBean] Detected record as a new event: 2
+2013-09-14 15:55:01,343 DEBUG [com.sapienter.jbilling.server.mediation.MediationSessionBean] Detected record as a new event: 3
+2013-09-14 15:55:01,350 DEBUG [com.sapienter.jbilling.server.mediation.MediationSessionBean] Detected record as a new event: 4
+2013-09-14 15:55:01,357 DEBUG [com.sapienter.jbilling.server.mediation.MediationSessionBean] Detected record as a new event: 5
+2013-09-14 15:55:01,361 DEBUG [com.sapienter.jbilling.server.mediation.MediationSessionBean] Detected record as a new event: 6
+2013-09-14 15:55:04,833 DEBUG [com.sapienter.jbilling.server.mediation.task.ComtalkCDRMediationTask] CDR Mediation started ...........
+2013-09-14 15:55:04,833 DEBUG [com.sapienter.jbilling.server.mediation.task.ComtalkCDRMediationTask] Now records and results are valid...
+2013-09-14 15:55:18,838 DEBUG [com.sapienter.jbilling.server.mediation.task.ComtalkCDRMediationTask] record fields.........................[name: id type: INTEGER value: 1 position: 1 resultId: 0, name: rec_key type: STRING value: 2072912313716637591379152509382120161629 position: 1 resultId: 0, name: caller_number type: STRING value: 20729123 position: 1 resultId: 0, name: called_number type: STRING value: 255767527246 position: 1 resultId: 0, name: destination type: STRING value: TANZANIA CELL VODACOM position: 1 resultId: 0, name: event_start type: DATE value: Wed Jun 19 23:12:39 IST 2013 position: 1 resultId: 0, name: event_end type: DATE value: Wed Jun 19 23:17:32 IST 2013 position: 1 resultId: 0, name: utc_event_date type: DATE value: Sat Jan 17 02:31:03 IST 1970 position: 1 resultId: 0, name: item_id type: INTEGER value: 4800 position: 1 resultId: 0, name: orig_quantity type: DECIMAL value: 293.0 position: 1 resultId: 0, name: rated_quantity type: DECIMAL value: 293.0 position: 1 resultId: 0, name: amount type: DECIMAL value: 3.08 position: 1 resultId: 0, name: price_min type: DECIMAL value: 0.6 position: 1 resultId: 0, name: user_id type: INTEGER value: 300473 position: 1 resultId: 0]
+2013-09-14 15:55:18,976 ERROR [com.sapienter.jbilling.server.mediation.MediationSessionBean] Unhandled exception occurred during mediation.
+java.lang.NullPointerException
+	at com.sapienter.jbilling.server.mediation.task.ComtalkCDRMediationTask.processBatch(ComtalkCDRMediationTask.java:134)
+	at com.sapienter.jbilling.server.mediation.task.ComtalkCDRMediationTask.process(ComtalkCDRMediationTask.java:81)
+	at com.sapienter.jbilling.server.mediation.MediationSessionBean.normalizeRecordGroup(MediationSessionBean.java:476)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:309)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:183)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:150)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:110)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:172)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:202)
+	at com.sun.proxy.$Proxy66.normalizeRecordGroup(Unknown Source)
+	at com.sapienter.jbilling.server.mediation.MediationSessionBean.performMediation(MediationSessionBean.java:232)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:309)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:183)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:150)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:110)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:172)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:202)
+	at com.sun.proxy.$Proxy66.performMediation(Unknown Source)
+	at com.sapienter.jbilling.server.mediation.MediationSessionBean$1.run(MediationSessionBean.java:182)
+	at java.lang.Thread.run(Thread.java:662)
+2013-09-14 15:55:19,069 DEBUG [com.sapienter.jbilling.server.mediation.MediationSessionBean] Configuration 'CDR Mediation Task' finished at Sat Sep 14 15:55:18 IST 2013
+2013-09-14 15:55:30,763 DEBUG [com.sapienter.jbilling.server.user.UserBL] Reading permisions for user 10
+2013-09-14 15:55:30,893 DEBUG [com.sapienter.jbilling.server.util.db.JbillingTableDAS] Looking for table + role
+2013-09-14 15:55:30,923 DEBUG [com.sapienter.jbilling.client.authentication.util.SecuritySession] Setting locale for Spring contexts: en_DK
